@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placeholder for title</title>
+    <meta name="description" content="Placeholder for description">
+    <link rel="stylesheet" type="text/css" href="Placeholder for CSS file">
+</head>
+<body>
+    <header>
+        Placeholder for header content
+    </header>
+
+    <main>
+        Placeholder for main content
+    </main>
+
+    <footer>
+        Placeholder for footer content
+    </footer>
+</body>
+</html>
+

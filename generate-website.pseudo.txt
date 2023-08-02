@@ -1,0 +1,19 @@
+Procedure: Generate Website
+Input: URL of the website to be generated
+
+    Initialize a dictionary named "page_content" to store the dynamic parts of the webpage
+
+    Open "index.html.template" file
+        Read the content of the file into a string variable named "template"
+
+    For each placeholder in "template":
+        If the placeholder exists in "page_content":
+            Replace the placeholder in "template" with the corresponding value from "page_content"
+
+    Create a new directory with the name equal to URL
+    Create a new file named "index.html" in the newly created directory
+    Write the updated "template" into "index.html"
+
+    Print success message
+End Procedure
+
