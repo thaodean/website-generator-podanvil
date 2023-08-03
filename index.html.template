@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+    /* Include minimal CSS here. Minify if possible. */
+    </style>
+</head>
+<body>
+    <h1>{{ header }}</h1>
+    <main>
+        <p>{{ main_content }}</p>
+        <a href="{{ purchase_link }}">{{ purchase_text }}</a>
+    </main>
+</body>
+</html>
+
