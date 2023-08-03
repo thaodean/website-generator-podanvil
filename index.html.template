@@ -3,71 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <style>
-        /* Add CSS for styling here. Consider using flexbox or grid for layout, and CSS animations or transitions for interactivity. */
-    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- Add navigation links here. -->
-        </nav>
-        <h1>{{ header }}</h1>
-    </header>
+    <!-- Some HTML here -->
 
-    <main>
-        <!-- Add sections or "cards" for each piece of content here. -->
-        <section>
-            <h2>About Us</h2>
-            <p>{{ main_content }}</p>
-        </section>
-
-        <section>
-            <h2>Standard Plan</h2>
-            <p>Get started for just $30 a year.</p>
-            <div id="paypal-button-container-{{ standard_plan_id }}"></div>
-            <script>
-                paypal.Buttons({
-                    createSubscription: function(data, actions) {
-                        return actions.subscription.create({
-                            'plan_id': '{{ standard_plan_id }}'
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        alert('You have successfully subscribed to ' + data.subscriptionID);
-                    }
-                }).render('#paypal-button-container-{{ standard_plan_id }}');
-            </script>
-        </section>
-
-        <section>
-            <h2>Premium Plan</h2>
-            <p>Get started for just $70 a year.</p>
-            <div id="paypal-button-container-{{ premium_plan_id }}"></div>
-            <script>
-                paypal.Buttons({
-                    createSubscription: function(data, actions) {
-                        return actions.subscription.create({
-                            'plan_id': '{{ premium_plan_id }}'
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        alert('You have successfully subscribed to ' + data.subscriptionID);
-                    }
-                }).render('#paypal-button-container-{{ premium_plan_id }}');
-            </script>
-        </section>
-
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email: info@podanvil.com</p>
-        </section>
-    </main>
-
-    <footer>
-        <!-- Add footer content here. -->
-        <p>Copyright © 2023 PodAnvil</p>
-    </footer>
-    <script src="https://www.paypal.com/sdk/js?client-id=EM3Kc1_Y5xj4KyXyNnb7xKcFMccLQ48Ra1Ru83AlB2adNL60auvT5M4yRvenMZicrjiwqrG55LSxDACj&vault=true&intent=subscription"></script>
+    <div id="paypal-button-container-{{ standard_plan_id }}"></div>
+    <script>
+        paypal.Buttons({
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                    'plan_id': '{{ standard_plan_id }}'  // Replace with your plan ID
+                });
+            },
+            onApprove: function(data, actions) {
+                alert('You have successfully subscribed to ' + data.subscriptionID);
+            }
+        }).render('#paypal-button-container-{{ standard_plan_id }}');  // Renders the PayPal button. Replace with your plan ID
+    </script>
+    
+    <!-- Some HTML here -->
+    
+    <div id="paypal-button-container-{{ premium_plan_id }}"></div>
+    <script>
+        paypal.Buttons({
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                    'plan_id': '{{ premium_plan_id }}'  // Replace with your plan ID
+                });
+            },
+            onApprove: function(data, actions) {
+                alert('You have successfully subscribed to ' + data.subscriptionID);
+            }
+        }).render('#paypal-button-container-{{ premium_plan_id }}');  // Renders the PayPal button. Replace with your plan ID
+    </script>
+    
+    <!-- Some HTML here -->
 </body>
 </html>
