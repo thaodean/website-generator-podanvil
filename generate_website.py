@@ -5,50 +5,8 @@ def generate_website(url):
         'title': 'PodAnvil - Static Hosting Solution',
         'header': 'Welcome to PodAnvil',
         'main_content': 'We provide cheap, static, secure website hosting solutions in k8s pods.',
-        'standard_purchase_text': """
-        <div id="paypal-button-container-P-77F74565795170217MTFTRAI"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=sb&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-        <script>
-        paypal.Buttons({
-            style: {
-                shape: 'rect',
-                color: 'gold',
-                layout: 'vertical',
-                label: 'subscribe'
-            },
-            createSubscription: function(data, actions) {
-                return actions.subscription.create({
-                'plan_id': 'P-77F74565795170217MTFTRAI'
-                });
-            },
-            onApprove: function(data, actions) {
-                alert(data.subscriptionID); // You can add optional success message for the subscriber here
-            }
-        }).render('#paypal-button-container-P-77F74565795170217MTFTRAI'); // Renders the PayPal button
-        </script>
-        """,
-        'premium_purchase_text': """
-        <div id="paypal-button-container-P-97Y90605YR327370YMTFUY7Y"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=sb&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-        <script>
-        paypal.Buttons({
-            style: {
-                shape: 'rect',
-                color: 'gold',
-                layout: 'vertical',
-                label: 'subscribe'
-            },
-            createSubscription: function(data, actions) {
-                return actions.subscription.create({
-                'plan_id': 'P-97Y90605YR327370YMTFUY7Y'
-                });
-            },
-            onApprove: function(data, actions) {
-                alert(data.subscriptionID); // You can add optional success message for the subscriber here
-            }
-        }).render('#paypal-button-container-P-97Y90605YR327370YMTFUY7Y'); // Renders the PayPal button
-        </script>
-        """
+        'standard_plan_id': 'P-77F74565795170217MTFTRAI',
+        'premium_plan_id': 'P-97Y90605YR327370YMTFUY7Y'
     }
 
     with open('index.html.template', 'r') as file:
@@ -66,4 +24,3 @@ def generate_website(url):
     print("Website successfully generated!")
 
 generate_website('podanvil.com')
-
