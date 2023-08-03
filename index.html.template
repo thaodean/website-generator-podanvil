@@ -11,8 +11,7 @@
     <h1>{{ header }}</h1>
     <main>
         <p>{{ main_content }}</p>
-        <a href="{{ purchase_link }}">{{ purchase_text }}</a>
+        <div>{{ purchase_text }}</div>
     </main>
 </body>
 </html>
-

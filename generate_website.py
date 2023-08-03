@@ -1,12 +1,33 @@
+#!/usr/bin/env python3
 import os
 
 def generate_website(url):
     page_content = {
         'title': 'PodAnvil - Static Hosting Solution',
         'header': 'Welcome to PodAnvil',
-        'main_content': 'We provide cheap, static, secure website hosting solutions in k8s pods. Get started for just $30 a year.',
+        'main_content': 'We provide cheap, static, secure website hosting solutions in k8s pods. Get started for just $70 a year.',
         'purchase_link': 'https://payment-gateway.com/podanvil',
-        'purchase_text': 'Buy Now',
+        'purchase_text': """<div id="paypal-button-container-P-77F74565795170217MTFTRAI"></div>
+                            <script src="https://www.paypal.com/sdk/js?client-id=AbLZu12gK1j0Xg04z5wcEpLVVDt2_90C9qx4VepzJ3kk3Uud7T3jwwEftqi9NrNEuXf5pA0m8rfN51vu&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                            <script>
+                            paypal.Buttons({
+                                style: {
+                                    shape: 'rect',
+                                    color: 'gold',
+                                    layout: 'vertical',
+                                    label: 'subscribe'
+                                },
+                                createSubscription: function(data, actions) {
+                                    return actions.subscription.create({
+                                    /* Creates the subscription */
+                                    plan_id: 'P-77F74565795170217MTFTRAI'
+                                    });
+                                },
+                                onApprove: function(data, actions) {
+                                    alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                }
+                            }).render('#paypal-button-container-P-77F74565795170217MTFTRAI'); // Renders the PayPal button
+                            </script>"""
     }
 
     with open('index.html.template', 'r') as file:
@@ -24,4 +45,3 @@ def generate_website(url):
     print("Website successfully generated!")
 
 generate_website('podanvil.com')
-
